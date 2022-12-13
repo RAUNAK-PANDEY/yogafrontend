@@ -38,7 +38,7 @@ export default function Signup() {
         user.age = parseFloat(user.age);
         console.log(user);
         const { data } = await axios
-          .post("https://yoga-xrrk.onrender.com/api/auth/signup", user, config)
+          .post("/api/auth/signup", user, config)
           .catch((err) => {
             if (err.response.status === 409) {
               setErrors("User Already Exist!");

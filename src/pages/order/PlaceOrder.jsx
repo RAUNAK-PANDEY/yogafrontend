@@ -23,7 +23,7 @@ const PlaceOrder = () => {
     };
     try {
       const { data } = await axios.post(
-        "https://yoga-xrrk.onrender.com/api/private/chooseplan",
+        "/api/private/chooseplan",
         { batch: e, paymentStatus: true, uid: user._id },
         config
       );
@@ -49,7 +49,7 @@ const PlaceOrder = () => {
         try {
           setIsFetching(true);
           const { data } = await axios
-            .post(`https://yoga-xrrk.onrender.com/api/private/chooseplan/`, { usid: user._id }, config)
+            .post(`/api/private/chooseplan/`, { usid: user._id }, config)
             .catch((err) => {
               if (err.response.status === 409) {
                 setErrors("Invalid seller");

@@ -33,7 +33,7 @@ export default function Signin() {
       },
     };
     try {
-      const { data } = await axios.post("https://yoga-xrrk.onrender.com/api/auth/signin", newuser, config);
+      const { data } = await axios.post("/api/auth/signin", newuser, config);
       localStorage.setItem("authToken", data.token);
       setIsFetching(false);
       navigate("/chooseplan");
